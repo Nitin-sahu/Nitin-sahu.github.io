@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale-1.0">
+        <title>document</title>
+    </head>
+<html>
+    <body>
+        <h2>what can javascript do? </h2>
+       
+
+        <button onclick="document.getElementById('myimage').src='1.jpeg'">go click chang img</button>
+        <img id="myimage" src="1.jpeg" style="width:100px">
+        <button onclick="document.getElementById('myimage').src='2.jpeg'">shut chang img</button>
+
+        <h1>show date</h1>
+        <button onclick="this.innerhtml.date()">the time is</button>
+
+        <br/>
+        <br/>
+        <img onmouseover="bigImg(this)" onmouseout="normalimg(this)" src="1.jpeg" alt="4" >
+
+    </body>
+
+<script>
+    function bigImg(x)
+    {
+        x.style.height="400px";
+        x.style.width="400px";
+    }
+
+    function normalimg(x)
+    {
+        x.style.height="50px";
+        x.style.width="50px";
+    }
+</script>
+
+
+</html>
