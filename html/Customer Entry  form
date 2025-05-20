@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Simple HTML Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Record System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h2>User Information Form</h2>
-  <form action="/submit_form" method="post">
-    <label for="fname">First Name:</label><br>
-    <input type="text" id="fname" name="fname" required><br><br>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
 
-    <label for="lname">Last Name:</label><br>
-    <input type="text" id="lname" name="lname" required><br><br>
+  <h1 class="text-3xl font-bold mb-6">Customer Management Portal</h1>
 
-    <input type="submit" value="Submit">
-  </form>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+    
+    <!-- Card 1: Add Record -->
+    <div class="bg-white rounded-2xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-4">Add New Customer</h2>
+      <button onclick="toggleForm('addForm')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Record</button>
+      <div id="addForm" class="mt-4 hidden">
+        <form class="grid grid-cols-1 gap-3">
+          <input type="text" placeholder="Name" class="p-2 border rounded" />
+          <input type="text" placeholder="Contact Number" class="p-2 border rounded" />
+          <input type="text" placeholder="Location" class="p-2 border rounded" />
+          <input type="email" placeholder="Email" class="p-2 border rounded" />
+          <input type="text" placeholder="Order" class="p-2 border rounded" />
+          <input type="text" placeholder="Payment" class="p-2 border rounded" />
+          <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Card 2: Fetch Record -->
+    <div class="bg-white rounded-2xl shadow-md p-6">
+      <h2 class="text-xl font-semibold mb-4">Fetch Customer Details</h2>
+      <button onclick="toggleForm('fetchForm')" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Fetch Record</button>
+      <div id="fetchForm" class="mt-4 hidden">
+        <form class="grid grid-cols-1 gap-3">
+          <input type="text" placeholder="Enter Customer Name or ID" class="p-2 border rounded" />
+          <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Search</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleForm(id) {
+      const form = document.getElementById(id);
+      form.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
